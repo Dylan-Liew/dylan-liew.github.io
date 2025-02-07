@@ -303,8 +303,8 @@ section.section-show {
   padding-bottom: 45px;
 }
 section .container {
-  background: rgba(100, 100, 100, 0.35);
-  /* background: rgba(0, 0, 0, 0.637); */
+  /* background: rgba(100, 100, 100, 0.35); */
+  background: rgba(75, 82, 85, 0.35);
   padding: 30px;
 }
 @media (max-width: 768px) {
