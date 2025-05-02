@@ -33,17 +33,21 @@ body::before {
 }
 
 a {
-  color: #30c4ff;
+  color: #1ebef0;
   text-decoration: none;
 }
 
 a:hover {
-  color: #94e0ff;
+  color: #1ba3cdc7;
   text-decoration: none;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "Raleway", sans-serif;
+}
+
+.smaller-font-size {
+  font-size: 13px;
 }
 
 /*--------------------------------------------------------------
@@ -282,7 +286,6 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
 }
 
-
 /*--------------------------------------------------------------
 # Sections General
 --------------------------------------------------------------*/
@@ -303,7 +306,6 @@ section.section-show {
   padding-bottom: 45px;
 }
 section .container {
-  /* background: rgba(100, 100, 100, 0.35); */
   background: rgba(75, 82, 85, 0.35);
   padding: 30px;
 }
@@ -348,7 +350,6 @@ section .container {
 /*--------------------------------------------------------------
 # About
 --------------------------------------------------------------*/
-
 .about-me .content ul {
   list-style: none;
   padding: 0;
@@ -376,14 +377,13 @@ section .container {
   margin-bottom: 0;
 }
 
-.about-me .content{
+.about-me .content {
   margin: auto;
 }
 
 .typewriter {
   white-space: nowrap;
-  font-family: monospace; /* Ensures each character has the same width */
-  /* letter-spacing: 0.5em; */
+  font-family: monospace;
   overflow: hidden;
   padding-right: 0px;
   margin-top: 5px;
@@ -394,10 +394,10 @@ section .container {
 
 @keyframes typewriter {
   from {
-    width: 0ch; /* Start at zero characters */
+    width: 0ch;
   }
   to {
-    width: 17ch; /* Number of characters to show (adjust based on your text) */
+    width: 17ch;
   }
 }
 
@@ -411,7 +411,6 @@ section .container {
   }
 }
 
-/* Styles for mobile view (up to 991px) */
 @media (max-width: 991px) {
   .typewriter {
     margin-top: 16px; 
@@ -575,12 +574,11 @@ section .container {
 .resume .resume-item h4 {
   line-height: 18px;
   font-size: 17px;
-  font-weight:450;
+  font-weight: 450;
   text-transform: uppercase;
   font-family: "Poppins", sans-serif;
   color: white;
-  /* color:#41c9ff; */
-  margin-bottom:15px;
+  margin-bottom: 15px;
 }
 .resume .resume-item h5 {
   font-size: 16px;
@@ -607,9 +605,7 @@ section .container {
   border-radius: 50px;
   left: -6.8px;
   top: 0;
-  /* background: #41c9ff; */
   background: #aaaaaa;
-  /* border: 2px solid #41c9ff; */
   border: 2px solid white;
 }
 
@@ -730,30 +726,28 @@ section .container {
   padding: 30px;
   background: rgba(255, 255, 255, 0.08);
 }
-.contact .php-email-form .error-message {
+.contact .php-email-form .error-message,
+.contact .php-email-form .sent-message,
+.contact .php-email-form .loading {
   display: none;
   background: rgba(255, 255, 255, 0.08);
+  padding: 15px;
+}
+.contact .php-email-form .error-message {
   background: #ed3c0d;
   text-align: left;
-  padding: 15px;
   font-weight: 600;
 }
 .contact .php-email-form .error-message br + br {
   margin-top: 25px;
 }
 .contact .php-email-form .sent-message {
-  display: none;
-  background: rgba(255, 255, 255, 0.08);
   background: #30c4ff;
   text-align: center;
-  padding: 15px;
   font-weight: 600;
 }
 .contact .php-email-form .loading {
-  display: none;
-  background: rgba(255, 255, 255, 0.08);
   text-align: center;
-  padding: 15px;
 }
 .contact .php-email-form .loading:before {
   content: "";
@@ -764,10 +758,10 @@ section .container {
   margin: 0 10px -6px 0;
   border: 3px solid #30c4ff;
   border-top-color: #eee;
-  -webkit-animation: animate-loading 1s linear infinite;
   animation: animate-loading 1s linear infinite;
 }
-.contact .php-email-form input, .contact .php-email-form textarea {
+.contact .php-email-form input, 
+.contact .php-email-form textarea {
   border-radius: 0;
   box-shadow: none;
   font-size: 14px;
@@ -776,14 +770,12 @@ section .container {
   transition: 0.3s;
   color: #fff;
 }
-.contact .php-email-form input:focus, .contact .php-email-form textarea:focus {
+.contact .php-email-form input:focus, 
+.contact .php-email-form textarea:focus {
   background-color: rgba(255, 255, 255, 0.11);
 }
-.contact .php-email-form input::-moz-placeholder, .contact .php-email-form textarea::-moz-placeholder {
-  color: rgba(255, 255, 255, 0.3);
-  opacity: 1;
-}
-.contact .php-email-form input::placeholder, .contact .php-email-form textarea::placeholder {
+.contact .php-email-form input::placeholder, 
+.contact .php-email-form textarea::placeholder {
   color: rgba(255, 255, 255, 0.3);
   opacity: 1;
 }
@@ -804,14 +796,7 @@ section .container {
 .contact .php-email-form button[type=submit]:hover {
   background: #15bb62;
 }
-@-webkit-keyframes animate-loading {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
+
 @keyframes animate-loading {
   0% {
     transform: rotate(0deg);
@@ -849,15 +834,15 @@ section .container {
 .credits a:hover {
   color: #fff;
 }
-.grade{
+.grade {
   font-size: 85%;
   opacity: 0.6;
   font-style: italic;
   text-align: justify;
 }
-.image-header{
+.image-header {
   opacity: 0.9;
-  font-size:90%;
+  font-size: 90%;
 }
 /*--------------------------------------------------------------
 # PDF
