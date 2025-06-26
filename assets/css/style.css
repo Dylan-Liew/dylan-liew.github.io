@@ -79,7 +79,7 @@ h1, h2, h3, h4, h5, h6 {
   display: inline-block;
 }
 #header h2 {
-  font-size: 24px;
+  font-size: 20px;
   margin-top: 20px;
   color: rgba(255, 255, 255, 0.8);
 }
@@ -110,7 +110,7 @@ h1, h2, h3, h4, h5, h6 {
   height: 40px;
 }
 #header .social-links a:hover {
-  background: #00b7ffa1
+  background: #0077a6d1
 }
 @media (max-width: 992px) {
   #header h1 {
