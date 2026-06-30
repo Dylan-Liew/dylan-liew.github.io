@@ -1,0 +1,128 @@
+site_name: Dylan Liew
+site_description: Personal cybersecurity notes, cheatsheets, study logs, and blog posts.
+site_url: https://dylan-liew.github.io/
+strict: true
+
+theme:
+  name: material
+  custom_dir: overrides
+  language: en
+  font: false
+  logo: assets/img/r.png
+  favicon: assets/img/r.png
+  palette:
+    - scheme: slate
+      primary: black
+      accent: white
+      toggle:
+        icon: material/weather-night
+        name: Switch to light mode
+    - scheme: default
+      primary: white
+      accent: black
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to dark mode
+  features:
+    - navigation.instant
+    - navigation.instant.prefetch
+    - navigation.instant.progress
+    - navigation.tabs
+    - navigation.sections
+    - navigation.indexes
+    - navigation.path
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - search.share
+    - toc.follow
+    - content.code.copy
+    - content.code.select
+    - content.tabs.link
+
+plugins:
+  - search:
+      lang: en
+  - glightbox:
+      touchNavigation: true
+      loop: false
+      effect: zoom
+      slide_effect: slide
+      width: 100%
+      height: auto
+      zoomable: true
+      draggable: true
+  - social:
+      enabled: !ENV [CI, false]
+  - minify:
+      minify_html: true
+
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.snippets:
+      check_paths: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+
+extra_css:
+  - assets/css/extra.css
+
+extra:
+  homepage: https://dylan-liew.github.io/
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/Dylan-Liew
+      name: GitHub
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/dylan-liew/
+      name: LinkedIn
+    - icon: fontawesome/brands/discord
+      link: https://discordapp.com/users/424807602304843776
+      name: Discord
+
+nav:
+  - Home: index.md
+  - Gyms:
+      - Overview: gyms/index.md
+      - OffSec:
+          - Overview: gyms/offsec/index.md
+          - OSCP: gyms/offsec/oscp/index.md
+          - OSWP: gyms/offsec/oswp/index.md
+          - OSWA: gyms/offsec/oswa/index.md
+          - OSWE: gyms/offsec/oswe/index.md
+          - OSEP: gyms/offsec/osep/index.md
+          - OSED: gyms/offsec/osed/index.md
+          - OSDA: gyms/offsec/osda/index.md
+          - OSIR: gyms/offsec/osir/index.md
+          - OSTH: gyms/offsec/osth/index.md
+          - OSAI: gyms/offsec/osai/index.md
+      - SANS:
+          - Overview: gyms/sans/index.md
+          - SEC660: gyms/sans/sec660/index.md
+  - Labs: labs/index.md
+  - Blogs: blogs/index.md
+  - Projects: projects/index.md

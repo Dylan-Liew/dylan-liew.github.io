@@ -1,0 +1,229 @@
+:root {
+  --cyber-bg: #111315;
+  --cyber-panel: #171a1e;
+  --cyber-border: rgba(255, 255, 255, 0.12);
+  --cyber-text: #f4f5f6;
+  --cyber-muted: #aeb4bc;
+}
+
+[data-md-color-scheme="slate"] {
+  --md-default-bg-color: var(--cyber-bg);
+  --md-default-fg-color: var(--cyber-text);
+  --md-default-fg-color--light: var(--cyber-muted);
+  --md-typeset-a-color: #ffffff;
+  --md-accent-fg-color: #ffffff;
+  --md-code-bg-color: #191c20;
+  --md-code-fg-color: #f0f2f4;
+}
+
+.md-header,
+.md-tabs {
+  border-bottom: 1px solid var(--cyber-border);
+  background: rgba(17, 19, 21, 0.94);
+  backdrop-filter: blur(14px);
+}
+
+.md-header__button.md-logo img {
+  border-radius: 4px;
+  image-rendering: pixelated;
+}
+
+.md-header__social {
+  flex-shrink: 0;
+  margin-inline: 0.2rem;
+}
+
+.md-header__social .md-social {
+  display: flex;
+  gap: 0.05rem;
+  padding: 0;
+}
+
+.md-header__social .md-social__link {
+  display: grid;
+  width: 2rem;
+  height: 2rem;
+  margin: 0;
+  place-items: center;
+  color: currentcolor;
+  opacity: 0.72;
+  transition: opacity 125ms;
+}
+
+.md-header__social .md-social__link:hover,
+.md-header__social .md-social__link:focus-visible {
+  opacity: 1;
+}
+
+.md-header__social .md-social__link svg {
+  width: 1rem;
+  height: 1rem;
+  fill: currentcolor;
+}
+
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3 {
+  letter-spacing: 0;
+}
+
+.md-typeset code {
+  border-radius: 4px;
+}
+
+.md-source-file {
+  display: none;
+}
+
+.md-typeset .admonition,
+.md-typeset details,
+.md-typeset .highlight,
+.md-typeset .highlighttable {
+  border-radius: 6px;
+}
+
+.md-main__inner:has(.home-landing),
+.md-content:has(.home-landing),
+.md-content__inner:has(.home-landing) {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+}
+
+.md-content__inner:has(.home-landing)::before,
+.md-content__inner:has(.home-landing) > .md-content__button,
+.md-content__inner:has(.home-landing) > .md-source-file {
+  display: none;
+}
+
+.home-landing {
+  position: relative;
+  display: grid;
+  min-height: calc(100svh - 5.6rem);
+  place-items: center;
+  overflow: hidden;
+  padding: 2rem 1.25rem;
+  color: var(--cyber-text);
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(180deg, #171a1d 0%, #101214 100%);
+  background-size: 34px 34px, 34px 34px, auto;
+}
+
+.home-profile {
+  position: relative;
+  z-index: 1;
+  width: min(720px, 100%);
+  text-align: center;
+}
+
+.home-status {
+  font-family: var(--md-code-font-family);
+}
+
+.home-profile h1 {
+  margin: 0;
+  color: #ffffff;
+  font-size: 4.8rem;
+  line-height: 0.95;
+}
+
+.home-interests {
+  margin: 1rem 0 0;
+  color: var(--cyber-muted);
+  font-size: 0.88rem;
+}
+
+.home-status {
+  width: fit-content;
+  max-width: 100%;
+  margin: 1.8rem auto 0;
+  padding: 0.7rem 0.9rem;
+  color: #d9dde2;
+  border: 1px solid var(--cyber-border);
+  border-radius: 6px;
+  background: rgba(17, 19, 21, 0.78);
+  font-size: 0.72rem;
+}
+
+.home-status span {
+  margin-right: 0.45rem;
+  color: #8fd8e8;
+}
+
+.home-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.65rem;
+  margin-top: 1.5rem;
+}
+
+.home-links .md-button {
+  min-width: 7rem;
+  margin: 0;
+  padding: 0.5rem 0.9rem;
+  color: #f3f4f6;
+  border-color: rgba(255, 255, 255, 0.28);
+  border-radius: 6px;
+  font-size: 0.72rem;
+  white-space: nowrap;
+}
+
+.home-links .md-button:hover,
+.home-links .md-button:focus-visible {
+  color: #111315;
+  border-color: #ffffff;
+  background: #ffffff;
+}
+
+.home-links .md-button--primary {
+  color: #111315;
+  border-color: #f3f4f6;
+  background: #f3f4f6;
+}
+
+@media (max-width: 640px) {
+  .md-header__social {
+    margin-inline: 0;
+  }
+
+  .md-header__social .md-social__link {
+    width: 1.65rem;
+  }
+
+  .home-landing {
+    min-height: calc(100svh - 3rem);
+  }
+
+  .home-profile h1 {
+    font-size: 3rem;
+  }
+
+  .home-links {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .home-links .md-button {
+    min-width: 0;
+  }
+}
+
+@media (max-width: 380px) {
+  .home-links {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}

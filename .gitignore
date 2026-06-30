@@ -1,0 +1,15 @@
+.venv/
+site/
+.cache/
+__pycache__/
+*.pyc
+
+# Local-only agent instructions
+AGENTS.md
+AGENT.md
+
+# Generated external content imported by scripts/sync_content.py
+docs/gyms/
+docs/labs/
+docs/blogs/
+docs/projects/
