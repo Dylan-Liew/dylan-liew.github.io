@@ -1,0 +1,57 @@
+{% set class = "md-header" %}
+{% if "navigation.tabs.sticky" in features %}
+  {% set class = class ~ " md-header--shadow md-header--lifted" %}
+{% elif "navigation.tabs" not in features %}
+  {% set class = class ~ " md-header--shadow" %}
+{% endif %}
+<header class="{{ class }}" data-md-component="header">
+  <div class="md-header__inner md-grid">
+    <a href="{{ config.extra.homepage | d(nav.homepage.url, true) | url }}" title="{{ config.site_name | e }}" class="md-header__button md-logo" aria-label="{{ config.site_name }}" data-md-component="logo">
+      {% include "partials/logo.html" %}
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      {% set icon = config.theme.icon.menu or "material/menu" %}
+      {% include ".icons/" ~ icon ~ ".svg" %}
+    </label>
+    {% if "navigation.tabs" in features %}
+      {% macro first_url(item) -%}
+        {% if item.children %}
+          {{ first_url(item.children | first) }}
+        {% else %}
+          {{ item.url | url }}
+        {% endif %}
+      {%- endmacro %}
+      <nav class="site-nav" aria-label="{{ lang.t('tabs') }}">
+        {% for nav_item in nav.items %}
+          <a href="{{ first_url(nav_item) | trim }}" class="site-nav__link{% if nav_item.active %} site-nav__link--active{% endif %}"{% if nav_item.active %} aria-current="page"{% endif %}>{{ nav_item.title }}</a>
+        {% endfor %}
+      </nav>
+    {% endif %}
+    {% if config.extra.social %}
+      <div class="md-header__social" aria-label="Social links">
+        {% include "partials/social.html" %}
+      </div>
+    {% endif %}
+    {% if config.theme.palette %}
+      {% if not config.theme.palette is mapping %}
+        {% include "partials/palette.html" %}
+      {% endif %}
+    {% endif %}
+    {% if not config.theme.palette is mapping %}
+      {% include "partials/javascripts/palette.html" %}
+    {% endif %}
+    {% if config.extra.alternate %}
+      {% include "partials/alternate.html" %}
+    {% endif %}
+    {% if "material/search" in config.plugins %}
+      {% set search = config.plugins["material/search"] | attr("config") %}
+      {% if search.enabled %}
+        <label class="md-header__button md-icon" for="__search">
+          {% set icon = config.theme.icon.search or "material/magnify" %}
+          {% include ".icons/" ~ icon ~ ".svg" %}
+        </label>
+        {% include "partials/search.html" %}
+      {% endif %}
+    {% endif %}
+  </div>
+</header>
