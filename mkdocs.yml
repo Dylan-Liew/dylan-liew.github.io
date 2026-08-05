@@ -3,6 +3,18 @@ site_description: Personal cybersecurity notes, cheatsheets, study logs, and blo
 site_url: https://dylan-liew.github.io/
 strict: true
 
+exclude_docs: |
+  gyms/oscp/methodology.md
+  gyms/oscp/enumeration.md
+  gyms/oscp/services.md
+  gyms/oscp/web.md
+  gyms/oscp/credentials.md
+  gyms/oscp/shells-transfers.md
+  gyms/oscp/linux-privesc.md
+  gyms/oscp/windows-privesc.md
+  gyms/oscp/active-directory.md
+  gyms/oscp/pivoting.md
+
 theme:
   name: material
   custom_dir: overrides
