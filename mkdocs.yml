@@ -111,20 +111,8 @@ nav:
   - Home: index.md
   - Gyms:
       - Overview: gyms/index.md
-      - OffSec:
-          - Overview: gyms/offsec/index.md
-          - OSCP: gyms/offsec/oscp/index.md
-          - OSWP: gyms/offsec/oswp/index.md
-          - OSWE: gyms/offsec/oswe/index.md
-          - OSEP: gyms/offsec/osep/index.md
-          - OSED: gyms/offsec/osed/index.md
-          - OSDA: gyms/offsec/osda/index.md
-          - OSIR: gyms/offsec/osir/index.md
-          - OSTH: gyms/offsec/osth/index.md
-          - OSAI: gyms/offsec/osai/index.md
-      - SANS:
-          - Overview: gyms/sans/index.md
-          - SEC660: gyms/sans/sec660/index.md
+      - OSCP: gyms/oscp/index.md
+      - GXPN: gyms/gxpn/index.md
   - Labs: labs/index.md
   - Blogs: blogs/index.md
   - Projects: projects/index.md

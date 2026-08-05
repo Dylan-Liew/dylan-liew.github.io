@@ -9,6 +9,7 @@ from pathlib import Path
 
 
 CONTENT_REPOS = ("gyms", "labs", "blogs", "projects")
+GYM_PATHS = ("index.md", "oscp", "gxpn")
 
 
 def ignore_patterns(_: str, names: list[str]) -> set[str]:
@@ -39,7 +40,21 @@ def import_repo(content_root: Path, docs_dir: Path, repo: str) -> None:
     if not source_docs.exists():
         raise FileNotFoundError(f"Missing content docs directory: {source_docs}")
 
-    copy_tree(source_docs, destination)
+    if repo == "gyms":
+        if destination.exists():
+            shutil.rmtree(destination)
+        destination.mkdir(parents=True)
+        for relative_path in GYM_PATHS:
+            source = source_docs / relative_path
+            target = destination / relative_path
+            if not source.exists():
+                raise FileNotFoundError(f"Missing gym content path: {source}")
+            if source.is_dir():
+                copy_tree(source, target)
+            else:
+                shutil.copy2(source, target)
+    else:
+        copy_tree(source_docs, destination)
     print(f"Imported {repo} into {destination}")
 
 
