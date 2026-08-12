@@ -9,7 +9,20 @@ from pathlib import Path
 
 
 CONTENT_REPOS = ("gyms", "labs", "blogs", "projects")
-GYM_PATHS = ("index.md", "oscp", "gxpn")
+GYM_PATHS = (
+    "index.md",
+    "oscp",
+    "osep",
+    "oswp",
+    "oswa",
+    "oswe",
+    "osed",
+    "osda",
+    "osir",
+    "osth",
+    "osai",
+    "gxpn",
+)
 
 
 def ignore_patterns(_: str, names: list[str]) -> set[str]:
