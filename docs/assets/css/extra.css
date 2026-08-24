@@ -40,10 +40,32 @@
   color: var(--cyber-nav-fg);
 }
 
+.md-header label[for="__search"] {
+  color: var(--cyber-nav-fg-muted);
+}
+
+.md-header label[for="__search"]:hover,
+.md-header label[for="__search"]:focus-visible {
+  color: var(--cyber-nav-fg);
+}
+
 .md-header .md-header__button svg,
 .md-header .md-icon svg,
-.md-header .md-social__link svg {
+.md-header .md-social__link svg,
+.md-header label[for="__search"] svg {
   fill: currentcolor;
+}
+
+.md-header label[for="__search"] svg,
+.md-header label[for="__search"] svg path {
+  fill: var(--cyber-nav-fg-muted) !important;
+}
+
+.md-header label[for="__search"]:hover svg,
+.md-header label[for="__search"]:hover svg path,
+.md-header label[for="__search"]:focus-visible svg,
+.md-header label[for="__search"]:focus-visible svg path {
+  fill: var(--cyber-nav-fg) !important;
 }
 
 .md-header .md-search__form,
