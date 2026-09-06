@@ -1,3 +1,13 @@
 {% extends "base.html" %}
 
+{% block htmltitle %}
+  {% if page.meta and page.meta.title %}
+    <title>{{ page.meta.title }}</title>
+  {% elif page.title %}
+    <title>{{ page.title | striptags }}</title>
+  {% else %}
+    <title>Home</title>
+  {% endif %}
+{% endblock %}
+
 {% block tabs %}{% endblock %}
