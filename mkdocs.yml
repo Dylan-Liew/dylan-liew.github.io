@@ -126,14 +126,13 @@ nav:
       - OSCP: gyms/oscp/index.md
       - OSEP: gyms/osep/index.md
       - OSWP: gyms/oswp/index.md
-      - OSWA: gyms/oswa/index.md
       - OSWE: gyms/oswe/index.md
       - OSED: gyms/osed/index.md
       - OSDA: gyms/osda/index.md
       - OSIR: gyms/osir/index.md
       - OSTH: gyms/osth/index.md
       - OSAI: gyms/osai/index.md
-      - GXPN: gyms/gxpn/index.md
+      - GCFA: gyms/gcfa/index.md
   - Labs: labs/index.md
   - Blogs: blogs/index.md
   - Projects: projects/index.md

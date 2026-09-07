@@ -14,14 +14,13 @@ GYM_PATHS = (
     "oscp",
     "osep",
     "oswp",
-    "oswa",
     "oswe",
     "osed",
     "osda",
     "osir",
     "osth",
     "osai",
-    "gxpn",
+    "gcfa",
 )
 
 
