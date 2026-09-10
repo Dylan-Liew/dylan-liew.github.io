@@ -46,13 +46,6 @@ jobs:
           path: content/blogs
           fetch-depth: 0
 
-      - name: Checkout projects
-        uses: actions/checkout@v4
-        with:
-          repository: Dylan-Liew/projects
-          path: content/projects
-          fetch-depth: 0
-
       - name: Set up Python
         uses: actions/setup-python@v5
         with:

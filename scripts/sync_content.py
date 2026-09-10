@@ -8,7 +8,7 @@ import shutil
 from pathlib import Path
 
 
-CONTENT_REPOS = ("gyms", "labs", "blogs", "projects")
+CONTENT_REPOS = ("gyms", "labs", "blogs")
 GYM_PATHS = (
     "index.md",
     "oscp",
